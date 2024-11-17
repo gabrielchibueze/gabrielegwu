@@ -1,0 +1,88 @@
+.contactForm {
+  box-shadow: 1px 5px 25px rgba(128, 128, 128, 0.155);
+  background-color: var(--background);
+  color: var(--foreground);
+  padding: 2rem;
+  border-radius: 0.5rem;
+}
+@media (min-width: 800px) {
+  .contactForm {
+    border: 1px solid var(--foreground);
+  }
+}
+.formInnerSection {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  gap: 2rem;
+}
+.formFileds {
+  width: 100%;
+}
+.formFileds > h1 {
+  font-size: xx-large;
+  margin: 2rem 0rem;
+}
+.topFormInput {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  margin-bottom: 0.5rem;
+}
+.topFormInput > main > label {
+  margin-top: 5rem;
+}
+@media (min-width: 1000px) {
+  .formInnerSection {
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1rem;
+  }
+  .formFileds {
+    /* min-width: 30%;
+    max-width: 50%; */
+    /* margin: 0 auto; */
+  }
+  .topInnerFormSection {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    height: 300px;
+  }
+  .topFormInput {
+    flex-direction: row;
+  }
+  .topFormInput > main {
+    width: 50%;
+  }
+}
+.socialMenuLinks {
+  display: flex;
+  gap: 1rem;
+  height: fit-content;
+  width: fit-content;
+  align-items: center;
+  padding-top: 0.5rem;
+}
+.socialMenuLinks > a > li {
+  list-style: none;
+  cursor: pointer;
+  border: none;
+  text-align: center;
+  align-items: center;
+  font-size: 3rem;
+  padding: 0rem 0.5rem;
+  transition: all 1s ease;
+  padding-top: 0.5rem;
+}
+
+.socialMenuLinks > a > li:hover,
+.socialMenuLinks > a > li:active {
+  background: transparent;
+  color: var(--foreground);
+  transition: all 1s ease;
+  box-shadow: 1px 5px 20px;
+  border-radius: 2rem;
+}

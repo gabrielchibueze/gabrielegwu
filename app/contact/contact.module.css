@@ -1,0 +1,22 @@
+.contactPage {
+  /* padding: var(--paddingD);
+  margin-top: 3rem;
+  margin-bottom: 3rem; */
+
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+}
+
+.topContactPage > h2 {
+  font-style: italic;
+  color: var(--colorRed);
+  margin-bottom: 1rem;
+}
+/* @media (max-width: 800px) {
+  .contactPage {
+    padding: var(--paddingM);
+    margin-top: 3rem;
+    margin-bottom: 3rem;
+  }
+} */
