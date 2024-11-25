@@ -244,7 +244,7 @@ export default function BlogHeader() {
                       className={`${
                         pathname === `${menu.link}` ? classes.isActive : ""
                       } ${
-                        pathname.startsWith(menu.link) && menu.link !== "/"
+                        pathname?.startsWith(menu.link) && menu.link !== "/"
                           ? classes.isActive
                           : ""
                       }`}
@@ -317,7 +317,7 @@ export default function BlogHeader() {
                   <Link
                     className={
                       (pathname === `${menu.link}` && classes.isActive) ||
-                      (pathname.startsWith(menu.link) &&
+                      (pathname?.startsWith(menu.link) &&
                         menu.link != "/" &&
                         classes.isActive)
                     }

@@ -24,7 +24,7 @@ export default function ContactSectionAllPages({ message }) {
       )}
       <main
         className={
-          path.startsWith("/contact")
+          path?.startsWith("/contact")
             ? classes.ContactSectionMain
             : classes.allPagesContact
         }
