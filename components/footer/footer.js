@@ -129,8 +129,7 @@ export default function Footer() {
 
       <div className={classes.subFooter}>
         <section>
-          <p></p>
-          <h3>© {new Date().getFullYear()} | gabrielegwu |</h3>
+          <h4>© {new Date().getFullYear()} | gabrielegwu |</h4>
         </section>
         <Link href="/terms-of-use"> All rights reserved</Link>
 

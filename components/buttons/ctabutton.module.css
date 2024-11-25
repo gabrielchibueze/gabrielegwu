@@ -24,7 +24,7 @@
   color: var(--foreground);
 }
 .cta > .raised {
-  color: var(--foreground);
+  color: #ffffff;
   text-decoration: none;
   background-color: var(--outlineColor);
   border: 1px solid var(--outlineColor);
@@ -51,7 +51,7 @@
   background-color: var(--outlineColor);
 }
 .cta > .raised:hover {
-  background-color: var(--foreground);
+  background-color: #ffffff;
   color: var(--outlineColor);
   border: 1px solid var(--outlineColor);
 }
@@ -93,7 +93,7 @@
   color: var(--foreground);
   background-color: var(--outlineColor);
 }
-
+/* just transparent */
 .cta > .transparent {
   position: relative;
   display: inline-block;
@@ -123,6 +123,39 @@
 
 .cta > .transparent:hover::after,
 .cta > .transparent:focus::after {
+  right: 0;
+  background: var(--outlineColor);
+}
+/* underlined */
+.cta > .underlined {
+  position: relative;
+  display: inline-block;
+  text-decoration: none;
+  color: inherit;
+  font-weight: 400;
+  border-bottom: 2px solid var(--outlineColor);
+  padding: 0.2rem 1rem 0rem 0.5rem;
+}
+
+.cta > .underlined:focus {
+  outline: none;
+}
+
+.cta > .underlined::after {
+  content: "";
+  display: block;
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 100%;
+  background: var(--foreground);
+  height: 100%;
+  z-index: -1;
+  transition: all 0.2s cubic-bezier(1, 0.68, 0.16, 0.9);
+}
+
+.cta > .underlined:hover::after,
+.cta > .underlined:focus::after {
   right: 0;
   background: var(--outlineColor);
 }

@@ -17,7 +17,7 @@ const theme = createTheme({
     MuiTextField: {
       styleOverrides: {
         root: {
-          backgroundColor: "var(--foreground)", // Background color for TextField
+          backgroundColor: "#ffffff", // Background color for TextField
           "& .MuiInputBase-root": {
             // height: "40px", // Set height for inputs
             borderRadius: "0px", // Rounded corners for inputs
@@ -40,7 +40,7 @@ const theme = createTheme({
     MuiSelect: {
       styleOverrides: {
         root: {
-          backgroundColor: "var(--foreground)", // Set background for Select dropdown
+          backgroundColor: "#ffffff", // Set background for Select dropdown
           "& .MuiOutlinedInput-root": {
             borderRadius: "8px", // Rounded corners for Select
             "&.Mui-focused fieldset": {
@@ -54,7 +54,7 @@ const theme = createTheme({
       styleOverrides: {
         root: {
           margin: "normal", // Apply normal margin for FormControl
-          backgroundColor: "var(--foreground)", // Set background for FormControl
+          // backgroundColor: "var(--foreground)", // Set background for FormControl
         },
       },
     },

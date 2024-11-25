@@ -43,11 +43,11 @@ export default function EmailSection() {
       </div>
       <div style={{ margin: "0 auto", marginTop: "1rem" }}>
         <CtaButton
-          action="mailto:contact@gabrielegwu.com" // Update to your email
+          action="mailto:info@gabrielegwu.com" // Update to your email
           design="plain"
           type="link"
         >
-          EMAIL ME
+          Email me
         </CtaButton>
       </div>
     </div>

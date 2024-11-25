@@ -1,0 +1,83 @@
+.technologyPage {
+  background-color: var(--background);
+  color: var(--foreground);
+  padding: var(--paddingD);
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.title {
+  font-size: 2.5rem;
+  font-weight: bold;
+  margin-bottom: 1rem;
+  text-align: center;
+}
+
+.introduction {
+  font-size: 1.2rem;
+  margin-bottom: 2rem;
+  text-align: center;
+  max-width: 800px;
+  line-height: 1.5;
+}
+
+.technologyContainer {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+}
+
+.technologySection {
+  background-color: var(--projectCard);
+  padding: 1rem;
+  border-radius: 0.5rem;
+  border: 2px solid var(--outlineColor);
+  transition: transform 0.3s, border-color 0.3s;
+}
+
+.technologySection:hover {
+  transform: scale(1.05);
+  border-color: var(--outlineColor);
+}
+
+.sectionDescription {
+  font-size: 1rem;
+  color: var(--foreground);
+  margin-bottom: 1rem;
+}
+
+.sectionTitle {
+  font-size: 1.8rem;
+  font-weight: bold;
+  margin-bottom: 1rem;
+}
+
+.technologyList {
+  list-style: none;
+  font-size: 1.2rem;
+}
+
+.technologyItem {
+  margin-bottom: 0.8rem;
+}
+
+@media (max-width: 800px) {
+  .technologyPage {
+    padding: var(--paddingM);
+  }
+
+  .technologyContainer {
+    gap: 1.5rem;
+  }
+
+  .technologyList {
+    font-size: 1rem;
+  }
+
+  .sectionDescription {
+    font-size: 0.9rem;
+  }
+}

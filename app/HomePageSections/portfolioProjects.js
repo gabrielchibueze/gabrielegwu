@@ -28,7 +28,7 @@ export default function PortfolioProjects() {
         content:
           "A comprehensive dashboard that utilizes AI models to generate actionable business insights, featuring dynamic data visualization with D3.js.",
         tools: ["HTML", "CSS", "JavaScript", "React", "MongoDB"],
-        image: "/projects/images/nedgab-consults.png",
+        image: "/images/social2.jpg",
         projectLink: "/projects/ai-dashboard",
         githubLink: "https://github.com/yourusername/ai-dashboard",
       },
@@ -56,7 +56,9 @@ export default function PortfolioProjects() {
           "Software designed for engineering analysis and sustainability assessments, integrated with OpenLCA for environmental impact evaluations.",
         tools: ["HTML", "CSS", "JavaScript", "React", "MongoDB"],
         image: "/projects/images/nedgab-consults.png",
-        projectLink: "/projects/sustainable-engineering",
+        image: "/images/social2.jpg",
+        projectLink: "/projects/portfolio-showcase",
+
         githubLink: "https://github.com/yourusername/sustainable-engineering",
       },
       {
@@ -80,88 +82,92 @@ export default function PortfolioProjects() {
     }
   }, [imagePreview]);
   return (
-    <div className={classes.portfolioProjects}>
+    <main className={classes.engineeringProjectsPage}>
       {isPreviewImage && (
         <dialog className="dialog">
           <section className="imagePreview">
-            <h1
+            <p
               className="closePreviewModal"
               onClick={() => setImagePreview(null)}
             >
               Close Modal
-            </h1>
-            <h2>{imagePreview?.title}</h2>
+            </p>
+            <h3>{imagePreview?.title}</h3>
 
             <div className="imageContainer">
-              <Image src={imagePreview?.image} fill />
+              <Image src={imagePreview?.image} alt={imagePreview.title} fill />
             </div>
             <p>{imagePreview?.content}</p>
           </section>
         </dialog>
       )}
-      <div className={classes.header}>
-        <p>{portfolioProjects.caption}</p>
-        <h1>{portfolioProjects.heading}</h1>
-      </div>
-      <ul className={classes.portfolioContents}>
-        {portfolioProjects.articles.map((article) => {
-          return (
-            <li key={article.title}>
-              <div className={classes.portfolioBottom}>
+      <p className={classes.description}>{portfolioProjects.caption}</p>
+      <h1 className={classes.title}>{portfolioProjects.heading}</h1>
+
+      <div className={classes.projectGrid}>
+        {portfolioProjects.articles.map((project, index) => (
+          <div key={index} className={classes.projectCard}>
+            <div
+              className={classes.projectImageWrapper}
+              onClick={() => setImagePreview(project)}
+            >
+              {/* Optional: You can add an image here if desired */}
+              <img
+                className={classes.projectImage}
+                src={project.image}
+                alt={project.title}
+              />
+            </div>
+            <div className={classes.projectContent}>
+              <h2 className={classes.projectTitle}>
+                <Link
+                  href={project.projectLink}
+                  className={classes.projectLink}
+                >
+                  {project.title}
+                </Link>
+              </h2>
+              <p className={classes.projectDescription}>{project.content}</p>
+              {/* <div style={{ marginLeft: "1rem" }}>
+                  <SingleHeadedLists lists={project.tools} type="highlights" />
+                </div> */}
+              <div className="coloredTexts">
+                <ul>
+                  {project.tools.map((tech, i) => (
+                    <li key={i}>{tech}</li>
+                  ))}
+                </ul>
+              </div>
+              <div className="projectLinks">
                 <div>
-                  <h2
-                    // style={{ cursor: "pointer" }}
-                    onClick={() => setImagePreview(article)}
+                  <CtaButton
+                    action={project.projectLink}
+                    target="_blank"
+                    design="underlined"
+                    type="link"
                   >
-                    {article.title}
-                  </h2>
-                  <p style={{ marginTop: "0.5rem" }}>{article.content}</p>
-                  <SingleHeadedLists lists={article.tools} type="highlights" />
-                </div>
-                <div className={classes.projectLinks}>
-                  <Link
-                    href={article.projectLink}
-                    className={classes.projectLink}
-                  >
-                    <div className={classes.moreProjectsBtn}>
-                      <span> Visit site</span>
-                      <h1>
+                    <div className="textWithIcon">
+                      <span>Visit Site</span>
+                      <h3>
                         <MdOutlineArrowRightAlt />
-                      </h1>
+                      </h3>
                     </div>
-                  </Link>
-                  <Link
-                    href={article.githubLink}
-                    className={classes.githubLink}
-                  >
-                    <FaGithub />
-                  </Link>
+                  </CtaButton>
                 </div>
+
+                <Link href={project.githubLink} className="githubLink">
+                  <FaGithub />
+                </Link>
               </div>
-              <div
-                className={classes.aboutImage}
-                onClick={() => setImagePreview(article)}
-              >
-                <Image src={article.image} fill alt={article.title} />
-              </div>
-            </li>
-          );
-        })}
-      </ul>
-      <div style={{ marginRight: "auto", marginTop: "-1rem" }}>
-        <CtaButton
-          action="/projects" // Update to your email
-          design="raised"
-          type="link"
-        >
-          <div className={classes.moreProjectsBtn}>
-            <span> MORE PROJECTS</span>
-            <h1>
-              <MdOutlineArrowRightAlt />
-            </h1>
+            </div>
           </div>
+        ))}
+      </div>
+      <div style={{ margin: "2rem auto 1rem 0" }}>
+        <CtaButton type="link" action="/projects" design="transparent">
+          Explore More Projects
         </CtaButton>
       </div>
-    </div>
+    </main>
   );
 }

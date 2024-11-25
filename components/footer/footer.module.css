@@ -1,13 +1,13 @@
 .footerDiv {
   /* background-color: #314150;
   background-color: var(--footerBackgroundColor); */
-  background: var(--background);
+  background: var(--footerBackground);
 
   line-height: 1.8;
   border-top: 1px solid rgba(34, 33, 33, 0.564);
 }
 .footerDiv > p {
-  color: var(--foreground);
+  color: var(--footerColor);
   margin-left: 7%;
   margin-bottom: 2rem;
 }
@@ -40,7 +40,7 @@
 .quickLinkSections > h3 {
   border: 1px solid var(--outlineColor);
   padding: 1rem;
-  color: var(--foreground);
+  color: var(--footerColor);
   width: fit-content;
   font-size: x-large;
 }
@@ -83,15 +83,15 @@
   text-align: center;
   align-items: center;
   font-size: 3rem;
-  padding: 0rem 0.5rem;
+  padding: 1rem 0.5rem;
   transition: all 1s ease;
-  padding-top: 0.5rem;
+  /* padding-top: 0.5rem; */
 }
 
 .socialMenuLinks > a > li:hover,
 .socialMenuLinks > a > li:active {
   background: transparent;
-  color: var(--foreground);
+  color: var(--footerColor);
   transition: all 1s ease;
   box-shadow: 1px 5px 20px;
   border-radius: 2rem;

@@ -1,0 +1,82 @@
+.organisationsPage {
+  background-color: var(--background);
+  color: var(--foreground);
+  padding: var(--paddingD);
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.title {
+  font-size: 2.5rem;
+  font-weight: bold;
+  margin-bottom: 1rem;
+  text-align: center;
+}
+
+.introduction {
+  font-size: 1.2rem;
+  margin-bottom: 2rem;
+  text-align: center;
+  max-width: 800px;
+  line-height: 1.5;
+}
+
+.organisationsContainer {
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+  width: 100%;
+  max-width: 800px;
+}
+
+.organisationCard {
+  background-color: var(--projectCard);
+  padding: 1.5rem;
+  border-radius: 0.5rem;
+  border: 2px solid var(--outlineColor);
+  transition: transform 0.3s, border-color 0.3s;
+}
+
+.organisationCard:hover {
+  transform: translateY(-5px);
+  border-color: var(--highlight);
+}
+
+.organisationName {
+  font-size: 1.8rem;
+  font-weight: bold;
+  margin-bottom: 0.5rem;
+}
+
+.organisationRole {
+  font-size: 1.2rem;
+  font-weight: 600;
+  color: var(--outlineColor);
+  margin-bottom: 0.5rem;
+}
+
+.organisationDuration {
+  font-size: 1rem;
+  font-style: italic;
+  margin-bottom: 0.5rem;
+}
+
+.organisationDescription {
+  font-size: 1.1rem;
+  line-height: 1.6;
+}
+
+.organisationLink {
+  font-size: 1rem;
+  color: var(--outlineColor);
+  font-weight: 600;
+  margin-top: 1rem;
+  text-decoration: none;
+  transition: color 0.3s ease;
+}
+
+.organisationLink:hover {
+  color: var(--primary);
+}

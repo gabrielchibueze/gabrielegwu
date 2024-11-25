@@ -1,0 +1,121 @@
+.engineeringProjectsPage {
+  background-color: var(--background);
+  color: var(--foreground);
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  padding: var(--paddingD);
+  align-items: center;
+}
+
+.title {
+  font-size: 2.5rem;
+  font-weight: bold;
+  margin-bottom: 1rem;
+  text-align: center;
+}
+
+.description {
+  font-size: 1.2rem;
+  margin-bottom: 2rem;
+  text-align: center;
+  max-width: 600px;
+  line-height: 1.5;
+}
+
+.projectGrid {
+  display: flex;
+  flex-direction: column; /* Arrange project cards vertically */
+  gap: 2rem;
+  width: 100%;
+}
+
+.projectCard {
+  display: flex;
+  flex-direction: row; /* Horizontal layout for each project card */
+  background-color: var(--projectCard);
+  padding: 1rem;
+  border-radius: 0.5rem;
+  border: 2px solid var(--projectCard);
+  transition: transform 0.3s, border-color 0.3s;
+  width: 100%;
+  max-width: 1200px; /* Limit max-width for better readability */
+  margin: 0 auto; /* Center the cards */
+}
+
+.projectCard:hover {
+  transform: scale(1.05);
+  border-color: var(--outlineColor);
+}
+
+.projectImageWrapper {
+  width: 40%; /* Adjust image width */
+  height: auto;
+  overflow: hidden;
+  border-radius: 0.5rem;
+  cursor: pointer;
+  margin-right: 1.5rem; /* Space between image and content */
+}
+
+.projectImage {
+  object-fit: cover;
+  width: 100%;
+  height: auto;
+  transition: transform 0.3s;
+}
+
+.projectImageWrapper:hover .projectImage {
+  transform: scale(1.1);
+}
+
+.projectContent {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  width: 60%; /* Content takes remaining space */
+  gap: 1rem;
+}
+
+@media (max-width: 800px) {
+  .projectCard {
+    flex-direction: column;
+  }
+  .projectImageWrapper {
+    margin-bottom: 1.5rem;
+    width: 100%;
+  }
+  .projectContent {
+    width: 100%;
+  }
+}
+.projectTitle {
+  font-size: 1.5rem;
+  font-weight: bold;
+  margin-bottom: 0.5rem;
+}
+
+.projectDescription {
+  font-size: 1rem;
+  line-height: 1.5;
+}
+
+.projectLinks {
+  display: flex;
+  align-items: center;
+  gap: 2rem;
+}
+
+.moreProjectsBtn {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  color: var(--outlineColor);
+  cursor: pointer;
+  font-weight: bold;
+}
+
+@media (min-width: 800px) {
+  .projectContent {
+    /* min-height: 230px; */
+  }
+}

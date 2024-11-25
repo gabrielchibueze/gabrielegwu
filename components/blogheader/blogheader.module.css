@@ -41,7 +41,7 @@
   position: absolute;
   animation: var(--animationSlideIn);
   height: fit-content;
-  margin-top: 2.5rem;
+  margin-top: 2rem;
 }
 /* .subMenuActive {
   background: linear-gradient(var(--colorSecondary), rgb(19, 102, 19));
@@ -98,7 +98,7 @@
 }
 .menuwithsubs {
   /* font-size: 0.7rem; */
-  margin-top: 0.5rem;
+  /* margin-top: 0.5rem; */
 }
 
 .mobileMenuLinks {
@@ -181,7 +181,7 @@
   width: 100%;
   z-index: 5;
   color: var(--foreground);
-  transition: all 1s ease;
+  transition: all 0.5s ease;
   font-weight: bold;
   border-bottom: 1px solid rgba(34, 33, 33, 0.564);
 }
@@ -207,7 +207,7 @@
 .blogHeaderActive {
   background: linear-gradient(var(--colorSecondary), rgb(19, 102, 19));
   background: var(--background);
-  transition: all 1s ease;
+  transition: all 0.5s ease;
   padding: 0.5rem 1rem;
 }
 
@@ -251,7 +251,7 @@
   flex-direction: row;
 }
 .primaryBlogNavs > div {
-  text-transform: uppercase;
+  /* text-transform: uppercase; */
 }
 @media (max-width: 1000px) {
   .navs {
@@ -354,3 +354,40 @@
     gap: 2rem;
   }
 }
+.blogInnerHeaderActive,
+.blogInnerHeader {
+  /* transition: none; */
+}
+.colorModeToggleBtn {
+  width: 40px;
+  height: 20px;
+  background-color: var(--foreground);
+  border: 2px solid var(--outlineColor);
+  border-radius: 0.6rem;
+  display: flex;
+  align-items: center;
+  padding: 0rem;
+}
+
+.colorModeToggleBtn > div {
+  /* background: radial-gradient(rgb(13, 12, 12), grey); */
+  background-color: var(--outlineColor);
+  height: 20px;
+  width: 60%;
+  border: none;
+  border-radius: 45%;
+  margin: -2px;
+  /* visibility: hidden; */
+  /* transition: all 0.5s ease-in-out; */
+}
+
+.currentColor {
+  visibility: hidden;
+  /* transition: all 1s ease-in-out; */
+}
+
+/* @media (max-width: 800px) {
+  .colorModeToggleBtn {
+    transform: rotate(90deg);
+  }
+} */

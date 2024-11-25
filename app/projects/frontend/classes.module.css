@@ -1,0 +1,110 @@
+.frontendProjectsPage {
+  background-color: var(--background);
+  color: var(--foreground);
+  min-height: 100vh;
+  padding: 2rem;
+  display: flex;
+  flex-direction: column;
+  padding: var(--paddingD);
+  align-items: center;
+}
+
+.title {
+  font-size: 2.5rem;
+  font-weight: bold;
+  margin-bottom: 1rem;
+}
+
+.description {
+  font-size: 1.2rem;
+  margin-bottom: 2rem;
+  text-align: center;
+  max-width: 600px;
+  line-height: 1.5;
+}
+
+.projectGrid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 2rem;
+  width: 100%;
+}
+
+.projectCard {
+  display: flex;
+  flex-direction: column;
+  background-color: var(--projectCard);
+  padding: 1rem;
+  border-radius: 0.5rem;
+  border: 2px solid var(--projectCard);
+  transition: transform 0.3s, border-color 0.3s;
+}
+
+.projectCard:hover {
+  transform: scale(1.05);
+  border-color: var(--outlineColor);
+}
+
+.projectImageWrapper {
+  width: 100%;
+  height: auto;
+  overflow: hidden;
+  border-radius: 0.5rem;
+  cursor: pointer;
+  margin-bottom: 1rem;
+}
+
+.projectImage {
+  object-fit: cover;
+  width: 100%;
+  height: auto;
+  transition: transform 0.3s;
+}
+
+.projectImageWrapper:hover .projectImage {
+  transform: scale(1.1);
+}
+
+.projectContent {
+  display: flex;
+  flex-direction: column;
+  /* align-items: center; */
+  /* text-align: center; */
+  gap: 0.5rem;
+}
+@media (min-width: 800px) {
+  .projectContent {
+    justify-content: space-between;
+
+    min-height: 230px;
+  }
+}
+
+.projectTitle {
+  font-size: 1.5rem;
+  font-weight: bold;
+  margin-bottom: 0.5rem;
+}
+
+.projectDescription {
+  font-size: 1rem;
+  /* margin-bottom: 1rem; */
+  line-height: 1.5;
+}
+
+.projectLinks {
+  display: flex;
+  /* justify-content: space-between; */
+  align-items: center;
+  width: 100%;
+  gap: 2rem;
+}
+
+.moreProjectsBtn {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  color: var(--outlineColor);
+  cursor: pointer;
+  font-weight: bold;
+}

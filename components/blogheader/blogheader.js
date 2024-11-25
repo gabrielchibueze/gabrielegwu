@@ -1,19 +1,15 @@
 "use client";
-import { FaRegUserCircle } from "react-icons/fa";
-import { CiSearch } from "react-icons/ci";
-import { GiHamburgerMenu } from "react-icons/gi";
 import classes from "./blogheader.module.css";
 import Link from "next/link";
 import { useEffect, useState } from "react";
 import { IoMenu } from "react-icons/io5";
 import { MdOutlineCloseFullscreen } from "react-icons/md";
 import { usePathname } from "next/navigation";
-import { FaFacebook, FaInstagram, FaXTwitter } from "react-icons/fa6";
-import { FaLinkedinIn } from "react-icons/fa";
 import { IoIosArrowDown } from "react-icons/io";
 import { IoIosArrowUp } from "react-icons/io";
 import { MdArrowDropDown } from "react-icons/md";
 import CtaButton from "../buttons/ctabuttonlink";
+// import { useDispatch, useSelector } from "react-redux";
 
 export default function BlogHeader() {
   const [headerState, setHeaderState] = useState({
@@ -22,6 +18,8 @@ export default function BlogHeader() {
     viewMenu: false,
   });
 
+  // const dispatch = useDispatch()
+  // const infoPage = useSelector(state => state.infoPage)
   const primaryBlogNavs = [
     {
       name: "Resume",
@@ -31,33 +29,32 @@ export default function BlogHeader() {
         { name: "Experience", link: "/resume/experience" },
         { name: "Skills", link: "/resume/skills" },
         { name: "Technology", link: "/resume/technology" },
-        { name: "Resume", link: "/resume/resume" },
         { name: "Aspiration", link: "/resume/aspirations" },
         { name: "Organisations", link: "/resume/organisations" },
       ],
     },
     {
-      name: "PROJECTS",
+      name: "Projects",
       link: "/projects",
       viewSub: false,
       submenu: [
         {
           name: "Frontend Projects",
-          link: "/projects/frontend-projects",
+          link: "/projects/frontend",
         },
         {
           name: "Backend Projects",
-          link: "/projects/backend-projects",
+          link: "/projects/backend",
         },
         {
           name: "Fullstack Projects",
-          link: "/projects/fullstack-projects",
+          link: "/projects/fullstack",
         },
         {
           name: "Engineering Projects",
-          link: "/projects/engineering-projects",
+          link: "/projects/engineering",
         },
-        { name: "Research Projects", link: "/projects/research-projects" },
+        { name: "Research Projects", link: "/projects/research" },
       ],
     },
     {
@@ -74,15 +71,43 @@ export default function BlogHeader() {
       name: "Info",
       link: "/info",
       viewSub: false,
-      submenu: [
-        { name: "Employment", link: "/info/employment" },
-        { name: "Career", link: "/info/career" },
-        { name: "Hobby", link: "/info/hobby" },
-        { name: "Philantropy", link: "/info/philantropy" },
-      ],
+      // submenu: [
+      //   { name: "Employment", link: "/info/employment" },
+      //   { name: "Career", link: "/info/career" },
+      //   { name: "Hobby", link: "/info/hobby" },
+      //   { name: "Philantropy", link: "/info/philantropy" },
+      // ],
     },
     { name: "Contact", link: "/contact" },
   ];
+
+  const [theme, setTheme] = useState(
+    typeof window !== "undefined" && localStorage.getItem("theme") === "dark"
+      ? "dark"
+      : "light"
+  );
+  const pathname = usePathname();
+  const [menuLinks, setMenuLinks] = useState(primaryBlogNavs);
+  const [fixHeader, setFixedHeader] = useState(false);
+  const [isActiveIndex, setIsActiveIndex] = useState(null);
+  useEffect(() => {
+    function scrollHandler() {
+      const scrollHeight = document.documentElement.scrollHeight;
+      const scrollPosition = window.scrollY;
+      const screenHeight = window.innerHeight;
+      setFixedHeader(
+        scrollPosition / (scrollHeight - screenHeight) <= 0.05162558
+      );
+    }
+    window.addEventListener("scroll", scrollHandler);
+    return () => window.removeEventListener("scroll", scrollHandler);
+  }, []);
+
+  useEffect(() => {
+    document.documentElement.setAttribute("data-theme", theme);
+    localStorage.setItem("theme", theme);
+  }, [theme]);
+
   const secondaryBlogNavs = [
     // {
     //   icon: (
@@ -113,9 +138,10 @@ export default function BlogHeader() {
     // },
     {
       icon: (
-        <div className={classes.showInDesktopBookMe}>
+        <div className={classes.showInDesktopBookMe} onClick={closeMenu}>
           <CtaButton design="raised" type="link" action="/contact">
-            WORK WITH ME
+            {/* WORK WITH ME */}
+            Work with me{" "}
           </CtaButton>
         </div>
       ),
@@ -134,41 +160,26 @@ export default function BlogHeader() {
         </div>
       ),
     },
+
+    {
+      icon: (
+        <main>
+          <div className={classes.colorModeToggleBtn} onClick={toggleTheme}>
+            <div className={theme === "dark" ? classes.currentColor : ""}></div>
+            <div
+              className={theme === "light" ? classes.currentColor : ""}
+            ></div>
+          </div>
+          {headerState.viewDesktopMode && (
+            <p>{theme.slice(0, 1).toUpperCase() + "" + theme.slice(1)} mode</p>
+          )}
+        </main>
+      ),
+    },
   ];
-  const socialMenuLinks = [
-    { name: <FaFacebook />, link: "https://facebook.com" },
-    { name: <FaInstagram />, link: "https://instagram.com" },
-    { name: <FaLinkedinIn />, link: "https://linkedin.com" },
-    { name: <FaXTwitter />, link: "https://x.com" },
-  ];
-
-  const socials = (
-    <ul className={classes.socialMenuLinks}>
-      {socialMenuLinks.map((menu) => (
-        <li key={menu.link}>
-          <Link href={menu.link}>{menu.name}</Link>
-        </li>
-      ))}
-    </ul>
-  );
-
-  const pathname = usePathname();
-  const [menuLinks, setMenuLinks] = useState(primaryBlogNavs);
-
-  const [fixHeader, setFixedHeader] = useState(false);
-  const [isActiveIndex, setIsActiveIndex] = useState(null);
-  useEffect(() => {
-    function scrollHandler() {
-      const scrollHeight = document.documentElement.scrollHeight;
-      const scrollPosition = window.scrollY;
-      const screenHeight = window.innerHeight;
-      setFixedHeader(
-        scrollPosition / (scrollHeight - screenHeight) <= 0.05162558
-      );
-    }
-    window.addEventListener("scroll", scrollHandler);
-    return () => window.removeEventListener("scroll", scrollHandler);
-  }, []);
+  function toggleTheme() {
+    setTheme((prev) => (prev === "light" ? "dark" : "light"));
+  }
   // Toggle submenu visibility for a specific menu item
   function showSubMenu(index) {
     setMenuLinks((prevMenuLinks) =>
@@ -205,10 +216,8 @@ export default function BlogHeader() {
 
   return (
     <header
-      className={`${
-        !fixHeader ? classes.blogHeaderActive : classes.blogHeader
-      }`}
-      style={{ position: `${fixHeader && "fixed"}` }}
+      className={`${fixHeader ? classes.blogHeaderActive : classes.blogHeader}`}
+      style={{ position: "fixed" }}
     >
       <div className={classes.headerInner}>
         <main
@@ -248,9 +257,9 @@ export default function BlogHeader() {
                         onClick={() => showSubMenu(index)}
                         className={classes.menuwithsubs}
                       >
-                        <h1>
+                        <h3>
                           <MdArrowDropDown />
-                        </h1>
+                        </h3>
                       </div>
                     )}
                   </li>
@@ -343,12 +352,6 @@ export default function BlogHeader() {
               </div>
             ))}
           </ul>
-          <div
-            style={{ margin: "0 auto", marginTop: "-5rem" }}
-            onClick={toggleMenu}
-          >
-            {socials}
-          </div>
         </div>
       )}
     </header>

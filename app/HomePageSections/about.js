@@ -17,8 +17,8 @@ export default function About() {
           that enhance performance and support your goals.
         </p>
         <div className={classes.cta}>
-          <CtaButton action="/contact" design="flat" type="link">
-            CONNECT WITH ME
+          <CtaButton action="/info" design="flat" type="link">
+            More about me
           </CtaButton>
         </div>
       </div>

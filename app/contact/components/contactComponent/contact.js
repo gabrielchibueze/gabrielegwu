@@ -80,20 +80,35 @@ export default function ContactComponentForm({ message, heading, caption }) {
         <dialog className="alertDailog">
           <div className="alertBox ">
             <div
-              style={{ display: "flex", flexDirection: "column", gap: "1rem" }}
+              style={{
+                display: "flex",
+                textAlign: "center",
+                justifyItems: "center",
+                justifyContent: "center",
+                flexDirection: "column",
+                gap: "1rem",
+              }}
             >
               {state?.status === "successful" ? (
-                <h1 style={{ color: "green" }}>
+                <h1
+                  style={{
+                    margin: "0 auto",
+                    color: "var(--outlineColor)",
+                  }}
+                >
                   <GrStatusGood />
                 </h1>
               ) : (
-                <h1 style={{ color: "red" }}>
+                <h1 style={{ margin: "0 auto", color: "red" }}>
                   <RiErrorWarningLine />
                 </h1>
               )}
               <h3
                 style={{
-                  color: state?.status === "successful" ? "green" : "red",
+                  color:
+                    state?.status === "successful"
+                      ? "var(--outlineColor)"
+                      : "red",
                 }}
               >
                 {state?.status === "successful"
@@ -118,7 +133,7 @@ export default function ContactComponentForm({ message, heading, caption }) {
         <Box>
           <div className={classes.formFileds}>
             <h1>
-              {caption || "We are happy to get you started with our services"}
+              {caption || "I am happy to get you started with my services"}
             </h1>
 
             <form action={formAction}>
@@ -270,7 +285,7 @@ export default function ContactComponentForm({ message, heading, caption }) {
                   loading="Submitting..."
                   disabled={!formData.consent}
                 >
-                  <span style={{ height: "5rem" }}>
+                  <span style={{ height: "4rem" }}>
                     {message || "Send Message"}
                   </span>
                 </CtaButton>

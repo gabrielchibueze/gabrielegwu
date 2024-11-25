@@ -1,0 +1,93 @@
+.researchProjectsPage {
+  background-color: var(--background);
+  color: var(--foreground);
+  min-height: 100vh;
+  padding: var(--paddingD);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.title {
+  font-size: 2.5rem;
+  font-weight: bold;
+  margin-bottom: 1rem;
+}
+
+.description {
+  font-size: 1.2rem;
+  margin-bottom: 2rem;
+  text-align: center;
+  max-width: 600px;
+  line-height: 1.5;
+}
+
+.projectList {
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+  width: 100%;
+}
+
+.projectCard {
+  display: flex;
+  flex-direction: row;
+  background-color: var(--projectCard);
+  padding: 1rem;
+  border-radius: 0.5rem;
+  border: 2px solid var(--projectCard);
+  transition: transform 0.3s, border-color 0.3s;
+  gap: 1.5rem;
+}
+
+.projectCard:hover {
+  transform: scale(1.02);
+  border-color: var(--outlineColor);
+}
+
+.projectImageWrapper {
+  width: 40%;
+  height: auto;
+  overflow: hidden;
+  border-radius: 0.5rem;
+}
+
+.projectImage {
+  object-fit: cover;
+  width: 100%;
+  height: 100%;
+  transition: transform 0.3s;
+}
+
+.projectImageWrapper:hover .projectImage {
+  transform: scale(1.1);
+}
+
+.projectContent {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  gap: 1rem;
+  flex: 1;
+}
+
+.projectTitle {
+  font-size: 1.5rem;
+  font-weight: bold;
+}
+
+.projectDescription {
+  font-size: 1rem;
+  line-height: 1.5;
+}
+
+.projectLink {
+  color: var(--outlineColor);
+  text-decoration: none;
+  font-weight: bold;
+  transition: color 0.3s;
+}
+
+.projectLink:hover {
+  color: var(--hoverColor);
+}

@@ -33,7 +33,7 @@ import classes from "./locationDropBy.module.css";
 
 export default function LocationDropBySection() {
   const emailSection = {
-    caption: "Stay Connected",
+    caption: "My sKills and expeirence is equal to the task",
     heading:
       "Let's Explore Opportunities and Collaborate on New and Exciting Projects Together",
   };
@@ -45,13 +45,8 @@ export default function LocationDropBySection() {
           <h1>{emailSection.heading}</h1>
         </div>
         <div style={{ margin: "0 auto", marginTop: "1rem" }}>
-          <CtaButton
-            action="/contact"
-            design="transparent"
-            target="_blank"
-            type="link"
-          >
-            Collaborate with Me
+          <CtaButton action="/resume" design="raised" type="link">
+            My Resume
           </CtaButton>
         </div>
       </div>

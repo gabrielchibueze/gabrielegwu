@@ -1,0 +1,65 @@
+.experiencePage {
+  background-color: var(--background);
+  color: var(--foreground);
+  padding: var(--paddingD);
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.title {
+  font-size: 2.5rem;
+  font-weight: bold;
+  margin-bottom: 1rem;
+  text-align: center;
+}
+
+.introduction {
+  font-size: 1.2rem;
+  margin-bottom: 2rem;
+  text-align: center;
+  max-width: 800px;
+  line-height: 1.5;
+}
+
+.experienceList {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+}
+
+.experienceCard {
+  background-color: var(--projectCard);
+  padding: 1rem;
+  border-radius: 0.5rem;
+  border: 2px solid var(--outlineColor);
+  transition: transform 0.3s, border-color 0.3s;
+}
+
+.experienceCard:hover {
+  transform: scale(1.05);
+  border-color: var(--outlineColor);
+}
+
+.experienceTitle {
+  font-size: 1.8rem;
+  font-weight: bold;
+  margin-bottom: 0.5rem;
+}
+
+.experienceDuration {
+  font-size: 1.2rem;
+  color: var(--foreground);
+  margin-bottom: 1rem;
+}
+
+.experienceResponsibilities {
+  font-size: 1rem;
+  line-height: 1.5;
+}
+
+.responsibilityItem {
+  margin-bottom: 0.8rem;
+}

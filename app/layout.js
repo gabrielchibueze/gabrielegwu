@@ -1,6 +1,4 @@
-import localFont from "next/font/local";
 import "./globals.css";
-import BlogWrapper from "@/components/blogWrapper/blogWrapper";
 import BlogHeader from "@/components/blogheader/blogheader";
 import Footer from "@/components/footer/footer";
 
@@ -14,7 +12,15 @@ export default function RootLayout({ children }) {
     <html lang="en">
       <body style={{ display: "flex", flexDirection: "column" }}>
         <BlogHeader />
-        <div style={{ minHeight: "100vh" }}>{children}</div>
+        <div
+          style={{
+            minHeight: "100vh",
+            paddingTop: "8rem",
+            paddingBottom: "3rem",
+          }}
+        >
+          {children}
+        </div>
         <Footer />
       </body>
     </html>

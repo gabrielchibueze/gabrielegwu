@@ -1,0 +1,79 @@
+.infoPage {
+  background-color: var(--background);
+  color: var(--foreground);
+  min-height: 100vh;
+  padding: var(--paddingD);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.title {
+  font-size: 2.5rem;
+  font-weight: bold;
+  margin-bottom: 1rem;
+}
+
+.description {
+  font-size: 1.2rem;
+  text-align: center;
+  max-width: 600px;
+  margin-bottom: 2rem;
+}
+
+.sectionContainer {
+  width: 100%;
+  max-width: 800px;
+}
+
+.section {
+  margin-bottom: 1rem;
+  border: 2px solid var(--projectCard);
+  border-radius: 0.5rem;
+  overflow: hidden;
+  transition: border-color 0.3s;
+}
+
+.section:hover {
+  border-color: var(--outlineColor);
+}
+
+.sectionHeader {
+  width: 100%;
+  background-color: var(--projectCard);
+  color: var(--foreground);
+  padding: 1rem;
+  font-size: 1.5rem;
+  text-align: left;
+  border: none;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+
+.sectionHeader:hover {
+  background-color: var(--outlineColor);
+}
+
+.sectionContent {
+  padding: 1rem;
+  /* background-color: var(--backgroundHighlight2); */
+  color: var(--foreground);
+  font-size: 1rem;
+  line-height: 1.5;
+}
+
+.infoList > li {
+  list-style-type: disc;
+  margin-left: 1.5rem;
+}
+
+.infoList > li {
+  margin-bottom: 1rem;
+}
+
+.activeSectionHeader {
+  background-color: var(--outlineColor);
+}
+.activeSection {
+  border-color: var(--outlineColor);
+}

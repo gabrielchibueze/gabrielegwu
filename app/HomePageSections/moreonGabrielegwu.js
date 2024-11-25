@@ -3,7 +3,8 @@ import { GrFormCheckmark } from "react-icons/gr";
 
 export default function MoreOnDeveloper() {
   const moreOnDeveloper = {
-    caption: "Connect with Me",
+    // caption: "Connect with Me",
+    caption: "What I stand for",
     heading: "Elevate Your Digital Presence with Professional Web Development",
     articles: [
       {

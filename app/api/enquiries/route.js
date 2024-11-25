@@ -78,7 +78,7 @@ export async function GET(request) {
     });
   } catch (error) {
     // Log detailed error for debugging
-    console.error("Error fetching enquiries:", error);
+    // console.error("Error fetching enquiries:", error);
 
     return NextResponse.json({
       message: "An error occurred fetching enquiries",
