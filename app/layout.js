@@ -1,7 +1,7 @@
 import "./globals.css";
 import BlogHeader from "@/components/blogheader/blogheader";
 import Footer from "@/components/footer/footer";
-
+import { Analytics } from "@vercel/analytics/react";
 export const metadata = {
   title: "Gabriel Egwu - Full-Stack Developer Portfolio",
   description:
@@ -22,6 +22,7 @@ export default function RootLayout({ children }) {
           {children}
         </div>
         <Footer />
+        <Analytics />
       </body>
     </html>
   );

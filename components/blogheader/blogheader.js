@@ -282,7 +282,7 @@ export default function BlogHeader() {
                     {nav.link ? (
                       <Link href={nav.link}>{nav.icon}</Link>
                     ) : (
-                      <li>{nav.icon}</li>
+                      <div>{nav.icon}</div>
                     )}
                   </li>
                 </div>

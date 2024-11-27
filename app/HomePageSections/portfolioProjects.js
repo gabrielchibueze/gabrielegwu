@@ -1,14 +1,11 @@
 "use client";
 import Link from "next/link";
 import classes from "./portfolioProjects.module.css";
-import { GrFormCheckmark } from "react-icons/gr";
 import Image from "next/image";
-import { FaExternalLinkAlt, FaGithub } from "react-icons/fa";
 import CtaButton from "@/components/buttons/ctabuttonlink";
-import { ArrowRight } from "@mui/icons-material";
 import { MdOutlineArrowRightAlt } from "react-icons/md";
-import SingleHeadedLists from "@/components/headedLists/singleHeadedLists";
 import { useEffect, useState } from "react";
+import { FaGithub } from "react-icons/fa";
 export default function PortfolioProjects() {
   const portfolioProjects = {
     caption: "Empowering Ideas Through Code",
@@ -81,21 +78,22 @@ export default function PortfolioProjects() {
       setIsPreviewImage(false);
     }
   }, [imagePreview]);
+  function closeModal() {
+    setImagePreview(false);
+    setImagePreview(null);
+  }
   return (
     <main className={classes.engineeringProjectsPage}>
       {isPreviewImage && (
         <dialog className="dialog">
           <section className="imagePreview">
-            <p
-              className="closePreviewModal"
-              onClick={() => setImagePreview(null)}
-            >
+            <p className="closePreviewModal" onClick={closeModal}>
               Close Modal
             </p>
             <h3>{imagePreview?.title}</h3>
 
             <div className="imageContainer">
-              <Image src={imagePreview?.image} alt={imagePreview.title} fill />
+              <Image src={imagePreview?.image} alt={imagePreview?.title} fill />
             </div>
             <p>{imagePreview?.content}</p>
           </section>
@@ -112,10 +110,12 @@ export default function PortfolioProjects() {
               onClick={() => setImagePreview(project)}
             >
               {/* Optional: You can add an image here if desired */}
-              <img
+              <Image
                 className={classes.projectImage}
                 src={project.image}
                 alt={project.title}
+                width={500}
+                height={300}
               />
             </div>
             <div className={classes.projectContent}>

@@ -37,11 +37,11 @@ export default function Footer() {
     {
       title: "POPULAR VISITS",
       links: [
-        { title: "Upcoming Events", link: "/events/upcoming" },
         { title: "My Projects", link: "/projects" },
         { title: "Experience", link: "/resume/experience" },
-        { title: "Technology", link: "/offers/vr-escape-room" },
-        { title: "Resume", link: "/resume/resume" },
+        { title: "Technology", link: "/resume/technology" },
+        { title: "Resume", link: "/resume" },
+        { title: "Events", link: "/events" },
       ],
     },
   ];

@@ -339,7 +339,8 @@ img:focus {
   }
 }
 .alertDailog {
-  background-color: var(--backgroundTransparent);
+  /* background-color: var(--backgroundTransparent); */
+  background-color: #00000066;
   color: var(--background);
   z-index: 9;
   position: fixed;
@@ -357,7 +358,8 @@ img:focus {
   padding: 2rem;
   align-items: center;
   justify-content: center;
-  background-color: var(--foreground);
+  background-color: var(--background);
+  color: var(--foreground);
   position: fixed;
   max-width: 500px;
   display: flex;
@@ -366,6 +368,7 @@ img:focus {
   gap: 1rem;
   border-radius: 0.5rem;
   text-align: center;
+  border: 1.5px solid var(--foreground);
 }
 
 /* Project Cards */
